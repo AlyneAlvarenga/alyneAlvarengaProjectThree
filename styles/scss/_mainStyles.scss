@@ -1,0 +1,16 @@
+main {
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: ". center ."
+                        ". bottom .";
+
+}
+
+.centerContainer {
+    grid-area: center;
+}
+
+.bottomContainer {
+    grid-area: bottom;
+}
