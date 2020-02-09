@@ -101,8 +101,8 @@ function displayOptions() {
    database.find(function(currentElement, currentIndex){
       if (index === currentIndex) {
          optionsContainer.html(`
-         <div class="right">${currentElement.rightAnswer}</div>
-         <div class="wrong">${currentElement.wrongAnswer}</div>
+         <div class="right"><p>${currentElement.rightAnswer}</p></div>
+         <div class="wrong"><p>${currentElement.wrongAnswer}</p></div>
          `)
          storeNewArray(database, currentIndex);
       } 
