@@ -289,3 +289,15 @@ main {
   -ms-grid-column: 2;
   grid-area: bottom;
 }
+
+.optionsContainer {
+  display: none;
+}
+
+.options {
+  height: 60px;
+}
+
+.counterContainer {
+  display: none;
+}

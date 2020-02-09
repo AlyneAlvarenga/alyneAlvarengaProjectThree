@@ -14,3 +14,17 @@ main {
 .bottomContainer {
     grid-area: bottom;
 }
+
+.optionsContainer {
+    display: none;
+    // border: 2px solid black;
+    // height: 400px;
+}
+
+.options {
+    height: 60px;
+}
+
+.counterContainer {
+    display: none;
+}
