@@ -305,3 +305,7 @@ main {
 .resultContainer {
   display: none;
 }
+
+.resetContainer {
+  display: none;
+}
