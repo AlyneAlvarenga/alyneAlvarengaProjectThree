@@ -42,10 +42,12 @@
    ]
 
    let counter = 0;
+   let splicedArray = [];
 
    const centerContainer = $('.centerContainer');
    const optionsContainer = $('.optionsContainer');
    const counterContainer = $('.counterContainer');
+   const resultContainer = $('.resultContainer');
    const counterP = $('.counter');
 
    const startButton = $('.startButton');
@@ -58,26 +60,37 @@
    //    }
    // }
 
-   function displayOptions() {
-      let index = Math.floor(Math.random() * (database.length));
+function storeNewArray(array, index) {
+   let newArray = array.splice(index, 1);
+   splicedArray = [...splicedArray, ...newArray]
+   console.log(splicedArray);
+}
+//code provided by Jonathan Wong
 
-      database.find(function(currentElement, currentIndex){
-         if (index === currentIndex) {
-            optionsContainer.html(`
-            <div class="right">${currentElement.rightAnswer}</div>
-            <div class="wrong">${currentElement.wrongAnswer}</div>
-            `)
-            database.splice(currentIndex, 1);
-            console.log(currentIndex);
-         } 
-      })
+function displayOptions() {
+   let index = Math.floor(Math.random() * (database.length));
+
+   database.find(function(currentElement, currentIndex){
+      if (index === currentIndex) {
+         optionsContainer.html(`
+         <div class="right">${currentElement.rightAnswer}</div>
+         <div class="wrong">${currentElement.wrongAnswer}</div>
+         `)
+         storeNewArray(database, currentIndex);
+      } 
+   })
    }
 
+   // let newArray = displayOptions();
+   // console.log(newArray);
+   
+   
    function deleteOptions() {
       optionsContainer.children().remove();
       // checkIfEmpty();
       if (database.length === 0) {
-         console.log('This is the end my only friend');
+         resultContainer.css('display', 'block');
+         counterContainer.css('display', 'none');
       } else {
          setTimeout(()=> {
             displayOptions();
