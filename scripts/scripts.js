@@ -64,7 +64,7 @@ startButton.on('click', function () {
    // instructions.remove();
    instructions.fadeOut();
    startButton.fadeTo(300, 0, displayOptions);
-   optionsContainer.css('display', 'block');
+   optionsContainer.css('display', 'grid');
    counterContainer.css('display', 'flex');
 })
 

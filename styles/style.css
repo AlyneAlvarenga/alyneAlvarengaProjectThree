@@ -254,6 +254,8 @@ h1, h2 {
 
 h1 {
   font-size: 7rem;
+  margin: 30px 0;
+  text-shadow: 1px 1px 8px black;
 }
 
 h2 {
@@ -276,11 +278,13 @@ body {
 }
 
 main {
-  height: 69vh;
+  min-height: calc(100vh - 217px);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr auto 1fr;
       grid-template-columns: 1fr auto 1fr;
+  -ms-grid-rows: 350px auto;
+      grid-template-rows: 350px auto;
       grid-template-areas: ". center ." ". bottom .";
 }
 
@@ -288,10 +292,16 @@ main {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
   padding: 20px;
   background-color: white;
   opacity: 85%;
   border-radius: 30px;
+  -webkit-box-shadow: inset 0px 0px 5px #000;
+          box-shadow: inset 0px 0px 5px #000;
 }
 
 .bottomContainer {
@@ -305,6 +315,22 @@ main {
 
 .optionsContainer {
   display: none;
+  grid-gap: 15px;
+}
+
+.optionsContainer div {
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 30px;
+  -webkit-box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.optionsContainer div:hover {
+  -webkit-box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
 }
 
 .options {
@@ -313,6 +339,16 @@ main {
 
 .counterContainer {
   display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  opacity: 85%;
+  border-radius: 30px;
+}
+
+.counterContainer p {
+  padding-right: 10px;
 }
 
 .resultContainer {
