@@ -94,19 +94,42 @@ function deleteOptions() {
    }
 }
 
+function generateRandomIndex(array) {
+   return Math.floor(Math.random() * array.length);
+}
+
 //generate a random number to access a random item on the array; display that item on the dom; call a function to remove that item and store it.
 function displayOptions() {
-   let index = Math.floor(Math.random() * (database.length));
+   const arrayIndex = generateRandomIndex(database);
+   const arrayOfCurrentObjValues = Object.values(database[arrayIndex]);
+   console.log(arrayOfCurrentObjValues);
+   //array of the values from a random object in the database
+   const randomValueInObj1 = generateRandomIndex(arrayOfCurrentObjValues);
+   let randomValueInObj2;
+
+   // to make sure that both keys are displayed, this checks if first value is zero, so that we can determine what the second value should be
+   if (randomValueInObj1 === 0) {
+      randomValueInObj2 = 1;
+   } else {
+      randomValueInObj2 = 0;
+   }
+
+   //how to I link back to the rightAnswer, wrongAnswer key of the values that were displayed
+   
 
    database.find(function(currentElement, currentIndex){
-      if (index === currentIndex) {
+      console.log(currentElement);
+      
+      if (arrayIndex === currentIndex) {
          optionsContainer.html(`
-         <div class="right"><p>${currentElement.rightAnswer}</p></div>
-         <div class="wrong"><p>${currentElement.wrongAnswer}</p></div>
+         <div class="right"><p>${arrayOfCurrentObjValues[randomValueInObj1]}</p></div>
+         <div class="wrong"><p>${arrayOfCurrentObjValues[randomValueInObj2]}</p></div>
          `)
          storeNewArray(database, currentIndex);
       } 
    })
+
+
 }
 
 //remove items that were shown on the dom so they won't repeat. store the removed items, so that they can be used again when the game resets
