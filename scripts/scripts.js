@@ -67,7 +67,7 @@ $(function () {
    })
 
    //listen for a click on one of the options; update counter; call the function to delete what's on the screen
-   optionsContainer.on('click', 'div', function () {
+   optionsContainer.on('click', 'button', function () {
       if (this.className === 'rightAnswer') {
          counter++;
          counterP.text(counter);
@@ -115,8 +115,8 @@ $(function () {
 
          if (arrayIndex === currentIndex) {
             optionsContainer.html(`
-      <div class="${arrayOfEntries[randomValueInObj1][0]}"><p>${arrayOfEntries[randomValueInObj1][1]}</p></div>
-      <div class="${arrayOfEntries[randomValueInObj2][0]}"><p>${arrayOfEntries[randomValueInObj2][1]}</p></div>
+      <button tabindex="0" class="${arrayOfEntries[randomValueInObj1][0]}"><p>${arrayOfEntries[randomValueInObj1][1]}</p></div>
+      <button tabindex="0" class="${arrayOfEntries[randomValueInObj2][0]}"><p>${arrayOfEntries[randomValueInObj2][1]}</p></div>
       `)
             storeNewArray(database, currentIndex);
          }

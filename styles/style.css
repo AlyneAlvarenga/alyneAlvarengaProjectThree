@@ -256,7 +256,7 @@ h1, h2 {
 h1 {
   font-size: 7rem;
   margin: 30px 0;
-  text-shadow: 1px 1px 8px black;
+  text-shadow: 1px 1px 8px black, 1px 1px 6px white;
 }
 
 h2 {
@@ -277,11 +277,27 @@ button {
   transition: all 300ms;
 }
 
-button:hover {
+button:hover, button:active {
   -webkit-box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
           box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
+}
+
+button:focus {
+  border: 2px solid blue;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 5.2rem;
+  }
 }
 
 body {
@@ -331,21 +347,26 @@ main {
   grid-gap: 15px;
 }
 
-.optionsContainer div {
+.optionsContainer button {
   cursor: pointer;
   opacity: 1;
   border-radius: 30px;
+  background-color: transparent;
   -webkit-box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
 
-.optionsContainer div:hover {
+.optionsContainer button:hover, .optionsContainer button:active {
   -webkit-box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
           box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
+}
+
+.optionsContainer button:focus {
+  border: 2px solid blue;
 }
 
 .options {
@@ -392,4 +413,11 @@ footer::after {
   background-image: url("../assets/transparentTengwar.png");
   -webkit-filter: drop-shadow(20px 5px 2px #000);
           filter: drop-shadow(20px 5px 2px #000);
+}
+
+@media (max-width: 500px) {
+  main {
+    -ms-grid-columns: 1fr 300px 1fr;
+        grid-template-columns: 1fr 300px 1fr;
+  }
 }
