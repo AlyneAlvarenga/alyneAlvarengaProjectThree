@@ -26,7 +26,13 @@ main {
 
 .bottomContainer {
     grid-area: bottom;
-    align-self: center;
+    margin-top: 30px;
+    // display: grid;
+    grid-template-areas: "all";
+}
+
+.startButton {
+    grid-area: all;
 }
 
 .optionsContainer {
@@ -34,18 +40,9 @@ main {
     grid-gap: 15px;
     button {
         cursor: pointer;
+        // padding: 30px;
         opacity: 1;
-        border-radius: 30px;
         background-color: transparent;
-        box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.75);
-        transition: all 300ms;
-        &:hover, &:active {
-            box-shadow: 10px 7px 7px 0 rgba(0,0,0,0.75);
-            transform: translateY(2px);
-        }
-        &:focus {
-            border: 2px solid blue;
-        }
     }
 }
 
@@ -55,6 +52,7 @@ main {
 
 .counterContainer {
     display: none;
+    grid-area: all;
     justify-content: center;
     background-color: white;
     box-shadow: inset 0px 0px 5px #000;
@@ -71,6 +69,7 @@ main {
 
 .resetContainer {
     display: none;
+    grid-area: all;
 }
 
 footer {
@@ -90,8 +89,21 @@ footer::after {
     filter: drop-shadow(20px 5px 2px #000);
 }
 
+@media (max-width: 619px) {
+    main {
+        min-height: calc(100vh - 330px);
+    }
+}
+
 @media (max-width: 500px) {
     main {
+        min-height: calc(100vh - 297px);
         grid-template-columns: 1fr 300px 1fr;
+    }
+}
+
+@media (max-width: 380px) {
+    main {
+        min-height: calc(100vh - 272px);
     }
 }

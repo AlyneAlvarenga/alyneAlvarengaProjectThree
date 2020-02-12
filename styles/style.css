@@ -238,7 +238,7 @@ html {
 :root {
   --ff-heading: 'Jim Nightshade', cursive;
   --ff-body: 'Cambay', sans-serif;
-  --accent-color: #B39B79;
+  --accent-color: rgba(179, 155, 121, 1);
 }
 
 html {
@@ -257,10 +257,12 @@ h1 {
   font-size: 7rem;
   margin: 30px 0;
   text-shadow: 1px 1px 8px black, 1px 1px 6px white;
+  background-color: rgba(179, 155, 121, 0.7);
 }
 
 h2 {
   font-size: 4rem;
+  margin: 20px 0;
 }
 
 p, button {
@@ -337,9 +339,14 @@ main {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: bottom;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  margin-top: 30px;
+      grid-template-areas: "all";
+}
+
+.startButton {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: all;
 }
 
 .optionsContainer {
@@ -350,23 +357,7 @@ main {
 .optionsContainer button {
   cursor: pointer;
   opacity: 1;
-  border-radius: 30px;
   background-color: transparent;
-  -webkit-box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
-}
-
-.optionsContainer button:hover, .optionsContainer button:active {
-  -webkit-box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 7px 7px 0 rgba(0, 0, 0, 0.75);
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
-}
-
-.optionsContainer button:focus {
-  border: 2px solid blue;
 }
 
 .options {
@@ -375,6 +366,9 @@ main {
 
 .counterContainer {
   display: none;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: all;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -395,6 +389,9 @@ main {
 
 .resetContainer {
   display: none;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: all;
 }
 
 footer {
@@ -415,9 +412,22 @@ footer::after {
           filter: drop-shadow(20px 5px 2px #000);
 }
 
+@media (max-width: 619px) {
+  main {
+    min-height: calc(100vh - 330px);
+  }
+}
+
 @media (max-width: 500px) {
   main {
+    min-height: calc(100vh - 297px);
     -ms-grid-columns: 1fr 300px 1fr;
         grid-template-columns: 1fr 300px 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  main {
+    min-height: calc(100vh - 272px);
   }
 }

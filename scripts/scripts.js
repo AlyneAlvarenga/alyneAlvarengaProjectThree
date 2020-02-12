@@ -80,11 +80,15 @@ $(function () {
       optionsContainer.children().remove();
       if (database.length === 0) {
          resultContainer.css('display', 'block');
+         // resultContainer.css('display', 'grid');
          resetContainer.css('display', 'block');
+         // resetContainer.css('display', 'grid');
+
          counterContainer.css('display', 'none');
          optionsContainer.css('display', 'none')
       } else {
          setTimeout(() => {
+            
             displayOptions();
 
          }, 200);
@@ -115,8 +119,8 @@ $(function () {
 
          if (arrayIndex === currentIndex) {
             optionsContainer.html(`
-      <button tabindex="0" class="${arrayOfEntries[randomValueInObj1][0]}"><p>${arrayOfEntries[randomValueInObj1][1]}</p></div>
-      <button tabindex="0" class="${arrayOfEntries[randomValueInObj2][0]}"><p>${arrayOfEntries[randomValueInObj2][1]}</p></div>
+      <button tabindex="0" class="${arrayOfEntries[randomValueInObj1][0]}"><p>${arrayOfEntries[randomValueInObj1][1]}</p></button>
+      <button tabindex="0" class="${arrayOfEntries[randomValueInObj2][0]}"><p>${arrayOfEntries[randomValueInObj2][1]}</p></button>
       `)
             storeNewArray(database, currentIndex);
          }
@@ -135,6 +139,7 @@ $(function () {
       database = database.concat(splicedArray);
       splicedArray = [];
       resultContainer.css('display', 'none');
+      counterContainer.css('display', 'none');
       instructions.css('display', 'block');
       counter = 0;
       counterP.text(counter);

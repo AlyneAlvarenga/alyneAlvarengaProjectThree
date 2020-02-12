@@ -1,7 +1,7 @@
 :root {
    --ff-heading: 'Jim Nightshade', cursive;
    --ff-body: 'Cambay', sans-serif;
-   --accent-color: #B39B79;
+   --accent-color: rgba(179, 155, 121, 1);
 }
 
 html {
@@ -20,10 +20,12 @@ h1 {
    font-size: 7rem;
    margin: 30px 0;
    text-shadow: 1px 1px 8px black, 1px 1px 6px white;
+   background-color: rgba(179, 155, 121, 0.7);
 }
 
 h2 {
    font-size: 4rem;
+   margin: 20px 0;
 }
 
 p, button {
