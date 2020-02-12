@@ -72,7 +72,7 @@ main {
 footer {
     height: 45px;
     position: relative;
-    background-color: #B39B79;
+    background-color: var(--accent-color);
 }
 
 footer::after {
@@ -85,7 +85,3 @@ footer::after {
     background-image: url('../assets/transparentTengwar.png');
     filter: drop-shadow(20px 5px 2px #000);
 }
-
-// .displayFlex {
-//     display: flex;
-// }

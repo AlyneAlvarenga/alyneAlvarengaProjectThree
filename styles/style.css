@@ -238,6 +238,7 @@ html {
 :root {
   --ff-heading: 'Jim Nightshade', cursive;
   --ff-body: 'Cambay', sans-serif;
+  --accent-color: #B39B79;
 }
 
 html {
@@ -378,7 +379,7 @@ main {
 footer {
   height: 45px;
   position: relative;
-  background-color: #B39B79;
+  background-color: var(--accent-color);
 }
 
 footer::after {
