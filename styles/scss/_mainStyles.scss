@@ -19,7 +19,7 @@ body {
 main {
     min-height: calc(100vh - 217px);
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr minmax(300px, auto) 1fr;
     grid-template-rows: 350px auto;
     grid-template-areas: ". center ."
                         ". bottom .";
@@ -39,12 +39,6 @@ main {
 .bottomContainer {
     grid-area: bottom;
     margin-top: 30px;
-    // display: grid;
-    grid-template-areas: "all";
-}
-
-.startButton {
-    grid-area: all;
 }
 
 .optionsContainer {
@@ -63,7 +57,6 @@ main {
 
 .counterContainer {
     display: none;
-    grid-area: all;
     justify-content: center;
     background-color: white;
     box-shadow: inset 0px 0px 5px #000;
@@ -80,7 +73,6 @@ main {
 
 .resetContainer {
     display: none;
-    grid-area: all;
 }
 
 footer {
@@ -134,7 +126,6 @@ footer::after {
 
 @media (max-width: 619px) {
     .timer {
-        
         top: 34%;
     }
     

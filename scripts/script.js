@@ -95,11 +95,7 @@ myApp.deleteOptions = function () {
    myApp.optionsContainer.children().remove();
    if (myApp.timePassed === myApp.timeLimit) {
       myApp.resultContainer.css('display', 'block');
-      //!Trying to change it to display grid
-      // myApp.resultContainer.css('display', 'grid');
       myApp.resetContainer.css('display', 'block');
-      //!Trying to change it to display grid
-      // myApp.resetContainer.css('display', 'grid');
       myApp.counterContainer.css('display', 'none');
       myApp.optionsContainer.css('display', 'none')
    } else {
@@ -162,18 +158,15 @@ myApp.formatTime = function(time) {
 };
 
 myApp.displayTime = function() {
-   $('.timer').css('display', 'block');
-   // !timer.css('display', 'block');
-   $('.timer').html(`${this.formatTime(myApp.timeLimit)}`);
-   // !timer.html(`${this.formatTime(myApp.timeLimit)}`);
+   myApp.timer.css('display', 'block');
+   myApp.timer.html(`${this.formatTime(myApp.timeLimit)}`);
 };
 
 myApp.startCountdown = function() {
    this.timerInterval = setInterval(()=>{
       myApp.timePassed += 1;
       this.timeLeft = this.timeLimit - this.timePassed;
-      $('.timer').html(`${myApp.formatTime(this.timeLeft)}`)
-      // !timer.html(`${myApp.formatTime(this.timeLeft)}`)
+      myApp.timer.html(`${myApp.formatTime(this.timeLeft)}`)
 
       if (myApp.timeLeft <= 0) {
          clearInterval(this.timerInterval);
@@ -182,30 +175,14 @@ myApp.startCountdown = function() {
    }, 1000)
 }
 
-myApp.init = function () {
-   //DOM elements
-   myApp.centerContainer = $('.centerContainer');
-   myApp.optionsContainer = $('.optionsContainer');
-   myApp.counterContainer = $('.counterContainer');
-   myApp.resultContainer = $('.resultContainer');
-   myApp.resetContainer = $('.resetContainer');
-   myApp.counterP = $('.counter');
-   myApp.startButton = $('.startButton');
-   myApp.resetButton = $('.resetButton');
-   myApp.instructions = $('.instructions');
-   myApp.timer = $('.timer');
-}
-
-
-
-$(function () {
-   
-   myApp.init();
-
+myApp.events = function() {
    //when user is ready to start, hide the instructions and the button, show the first set of options and the counter.
    myApp.startButton.on('click', function () {
-      myApp.instructions.fadeOut();
-      myApp.startButton.fadeTo(300, 0, myApp.displayOptions);
+      // myApp.instructions.fadeOut();
+      myApp.instructions.css('display', 'none');
+      // myApp.startButton.fadeTo(300, 0, myApp.displayOptions);
+      myApp.startButton.css('display', 'none');
+      myApp.displayOptions();
       myApp.optionsContainer.css('display', 'grid');
       myApp.counterContainer.css('display', 'flex');
       myApp.displayTime();
@@ -221,7 +198,6 @@ $(function () {
       myApp.deleteOptions();
    })
 
-
    //reset the database to have all items, show the instructions and start button again, hide the rest, reset counter, reset spliced array, reset timer
    myApp.resetContainer.on('click', myApp.resetButton, function () {
       myApp.database = myApp.database.concat(myApp.splicedArray);
@@ -231,13 +207,34 @@ $(function () {
       myApp.instructions.css('display', 'block');
       myApp.counter = 0;
       myApp.counterP.text(myApp.counter);
-      myApp.startButton.fadeTo(300, 1);
+      // myApp.startButton.fadeTo(300, 1);
+      myApp.startButton.css('display', 'inline-block');
       myApp.resetContainer.css('display', 'none');
       myApp.timeLimit = 10;
       myApp.timePassed = 0;
       myApp.timeLeft = myApp.timeLimit;
       myApp.timerInterval = null;
-      $('.timer').css('display', 'none');
-      // !timer.css('display', 'none');
+      myApp.timer.css('display', 'none');
    })
+}
+
+myApp.init = function () {
+   //DOM elements
+   myApp.centerContainer = $('.centerContainer');
+   myApp.optionsContainer = $('.optionsContainer');
+   myApp.counterContainer = $('.counterContainer');
+   myApp.resultContainer = $('.resultContainer');
+   myApp.resetContainer = $('.resetContainer');
+   myApp.counterP = $('.counter');
+   myApp.startButton = $('.startButton');
+   myApp.resetButton = $('.resetButton');
+   myApp.instructions = $('.instructions');
+   myApp.timer = $('.timer');
+   myApp.events();
+}
+
+$(function () {
+   
+   myApp.init();
+
 });
