@@ -24,9 +24,10 @@ main {
     min-height: calc(70vh - 45px);
     display: grid;
     grid-template-columns: 1fr minmax(300px, auto) 1fr;
-    grid-template-rows: minmax(300px, auto) auto;
+    grid-template-rows: minmax(300px, auto) auto 20px;
     grid-template-areas: ". center ."
-                        ". bottom .";
+                        ". bottom ."
+                        ". . .";
 }
 
 .centerContainer {
@@ -118,11 +119,12 @@ footer::after {
 
 @media (max-width: 430px) {
     header {
-        height: 30vh;
+        height: 33vh;
     }
     
     main {
-        min-height: calc(70vh - 45px);
+        height: calc(67vh - 45px);
         grid-template-columns: 1fr 300px 1fr;
     }
+
 }

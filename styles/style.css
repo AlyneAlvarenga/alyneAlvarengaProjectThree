@@ -338,9 +338,9 @@ main {
   display: grid;
   -ms-grid-columns: 1fr minmax(300px, auto) 1fr;
       grid-template-columns: 1fr minmax(300px, auto) 1fr;
-  -ms-grid-rows: minmax(300px, auto) auto;
-      grid-template-rows: minmax(300px, auto) auto;
-      grid-template-areas: ". center ." ". bottom .";
+  -ms-grid-rows: minmax(300px, auto) auto 20px;
+      grid-template-rows: minmax(300px, auto) auto 20px;
+      grid-template-areas: ". center ." ". bottom ." ". . .";
 }
 
 .centerContainer {
@@ -442,10 +442,10 @@ footer::after {
 
 @media (max-width: 430px) {
   header {
-    height: 30vh;
+    height: 33vh;
   }
   main {
-    min-height: calc(70vh - 45px);
+    height: calc(67vh - 45px);
     -ms-grid-columns: 1fr 300px 1fr;
         grid-template-columns: 1fr 300px 1fr;
   }
