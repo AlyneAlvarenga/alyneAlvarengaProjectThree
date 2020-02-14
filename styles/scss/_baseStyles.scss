@@ -18,7 +18,7 @@ h1, h2 {
 
 h1 {
    font-size: 7rem;
-   margin: 30px 0;
+   margin: 10px 0;
    text-shadow: 1px 1px 8px black, 1px 1px 6px white;
    background-color: rgba(179, 155, 121, 0.7);
 }
@@ -44,7 +44,8 @@ button {
       transform: translateY(2px);
    }
    &:focus {
-      border: 2px solid blue;
+      background-color: rgba(0,0,0,0.4);
+      color: white;
    }
 
 }
