@@ -299,8 +299,16 @@ button:focus {
 }
 
 @media (max-width: 380px) {
+  html {
+    line-height: 1.3;
+  }
   h1 {
-    font-size: 5.2rem;
+    font-size: 5rem;
+    margin: 6px 0;
+  }
+  h2 {
+    font-size: 3.5rem;
+    margin: 5px 0;
   }
 }
 
@@ -338,8 +346,8 @@ main {
   display: grid;
   -ms-grid-columns: 1fr minmax(300px, auto) 1fr;
       grid-template-columns: 1fr minmax(300px, auto) 1fr;
-  -ms-grid-rows: minmax(300px, auto) auto 20px;
-      grid-template-rows: minmax(300px, auto) auto 20px;
+  -ms-grid-rows: minmax(300px, auto) auto 30px;
+      grid-template-rows: minmax(300px, auto) auto 30px;
       grid-template-areas: ". center ." ". bottom ." ". . .";
 }
 
@@ -448,5 +456,29 @@ footer::after {
     height: calc(67vh - 45px);
     -ms-grid-columns: 1fr 300px 1fr;
         grid-template-columns: 1fr 300px 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  header {
+    height: 30vh;
+    -ms-grid-rows: 1fr 50px;
+        grid-template-rows: 1fr 50px;
+  }
+  main {
+    height: calc(70vh - 38px);
+  }
+  .timer {
+    margin-bottom: 7px;
+    font-size: 4.5rem;
+  }
+  .instructions p {
+    margin: 10px 0;
+  }
+  .bottomContainer {
+    margin-top: 10px;
+  }
+  footer {
+    height: 38px;
   }
 }
