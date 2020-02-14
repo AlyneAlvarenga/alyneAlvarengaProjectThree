@@ -123,7 +123,7 @@ footer::after {
     }
     
     main {
-        height: calc(67vh - 45px);
+        min-height: calc(67vh - 45px);
         grid-template-columns: 1fr 300px 1fr;
     }
 
@@ -136,7 +136,7 @@ footer::after {
     }
 
     main {
-        height: calc(70vh - 38px);
+        min-height: calc(70vh - 38px);
 
     }
 

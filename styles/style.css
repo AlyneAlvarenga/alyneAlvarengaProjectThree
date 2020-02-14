@@ -453,7 +453,7 @@ footer::after {
     height: 33vh;
   }
   main {
-    height: calc(67vh - 45px);
+    min-height: calc(67vh - 45px);
     -ms-grid-columns: 1fr 300px 1fr;
         grid-template-columns: 1fr 300px 1fr;
   }
@@ -466,7 +466,7 @@ footer::after {
         grid-template-rows: 1fr 50px;
   }
   main {
-    height: calc(70vh - 38px);
+    min-height: calc(70vh - 38px);
   }
   .timer {
     margin-bottom: 7px;
