@@ -178,9 +178,7 @@ myApp.startCountdown = function() {
 myApp.events = function() {
    //when user is ready to start, hide the instructions and the button, show the first set of options and the counter.
    myApp.startButton.on('click', function () {
-      // myApp.instructions.fadeOut();
       myApp.instructions.css('display', 'none');
-      // myApp.startButton.fadeTo(300, 0, myApp.displayOptions);
       myApp.startButton.css('display', 'none');
       myApp.displayOptions();
       myApp.optionsContainer.css('display', 'grid');
@@ -207,7 +205,6 @@ myApp.events = function() {
       myApp.instructions.css('display', 'block');
       myApp.counter = 0;
       myApp.counterP.text(myApp.counter);
-      // myApp.startButton.fadeTo(300, 1);
       myApp.startButton.css('display', 'inline-block');
       myApp.resetContainer.css('display', 'none');
       myApp.timeLimit = 10;
